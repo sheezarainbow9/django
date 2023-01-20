@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Lista de <Alunos>% endblock %</Alunos>
+{% block title %}Lista de Alunos{% endblock %}
 
 % block content %
 
@@ -16,11 +16,11 @@
         </tr>
     </thead>
     <tbody>
-        % for aluno in alunos %
+        {% for aluno in alunos %}
         <tr>
             <td><span><a href="/aluno/{{aluno.id}}">{{aluno.nome}}</a></span></td>
-            <td><a href="edit/{{aluno.id/}}">editar</a></td>
-            <td><a href="delete/{{aluno.id/}}" class="delete-btn">deletar</a></td>
+            <td><a href="edit/{{aluno.id}}">editar</a></td>
+            <td><a href="delete/{{aluno.id}}" class="delete-btn">deletar</a></td>
 
         </tr>
         {% endfor %}
