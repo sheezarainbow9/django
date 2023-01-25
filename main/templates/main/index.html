@@ -1,0 +1,25 @@
+% extends 'base.html' %
+
+% block content %
+
+<form method="post">
+    <!-- csrf_token: Chave de segurança OBRIGATÓRIA com POST -->
+    % csrf_token %
+    <div class="form-row">
+        <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome">
+        <label for="nome"></label>
+    </div>
+    <div class="col">
+        <input type="email" name="email" id="nome" class="form-control" placeholder="E-mail">
+        <label for="email"></label>
+    </div>
+    <div class="col">
+        <input type="tel" name="telefone" id="telefone" class="form-control" placeholder="Telefone">
+        <label for="telefone"></label>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
