@@ -1,11 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Lista de Alunos{% endblock %}
 
-<head>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
 {% block content %}
 
 <a id="add-link" href="newaluno/">
@@ -25,8 +20,8 @@
     {% for aluno in alunos %}
     <tr>
       <td><span><a href="/aluno/{{aluno.id}}">{{aluno.nome}}</a></span></td>
-      <td><a href="edit/{{aluno.id}}"><span><i class="fas fa-edit"></i></span></td>
-      <td><a href="delete/{{aluno.id}}" class="delete-btn"><span><i class="fas fa-trash"></i></span></a></td>
+      <td><a href="edit/{{aluno.id}}">Editar</td><!--<span><i class="fas fa-edit"></i></span>-->
+      <td><a href="delete/{{aluno.id}}" class="delete-btn">Deletar</td><!--<span><i class="fas fa-trash"></i></span>-->
     </tr>
     {% endfor %}
 
