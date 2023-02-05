@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 
 # Create your models here.
 
-
 class Aluno(models.Model):
 
     nome = models.CharField(max_length=255)
