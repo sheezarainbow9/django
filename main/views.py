@@ -12,11 +12,9 @@ class AlunoViewSet(viewsets.ModelViewSet):
     serializer_class = AlunoSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-
-# Create your views here.
-
-
 # # define que o usuário esteja logado, para ter acesso às informações. Deve-se colocar em todas as funções privadas.
+
+
 @login_required
 def alunoView(request):
     # Só funciona após criar o app accounts.
