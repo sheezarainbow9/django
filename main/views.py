@@ -3,10 +3,20 @@ from .models import Aluno
 from .forms import AlunoForm
 from django.contrib.auth.decorators import login_required
 
+from .serializers import AlunoSerializer
+from rest_framework import viewsets, permissions
+
+
+class AlunoViewSet(viewsets.ModelViewSet):
+    queryset = Aluno.objects.all()
+    serializer_class = AlunoSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+
 # Create your views here.
 
 
-# define que o usuário esteja logado, para ter acesso às informações. Deve-se colocar em todas as funções privadas.
+# # define que o usuário esteja logado, para ter acesso às informações. Deve-se colocar em todas as funções privadas.
 @login_required
 def alunoView(request):
     # Só funciona após criar o app accounts.
@@ -19,16 +29,16 @@ def alunoidView(request, id):
     return render(request, 'main/aluno.html', {'aluno': aluno})
 
 
-# def exemplo(request):
-    # if request.method == 'POST':
-    # name = request.POST.get('nome', None)
-    # email = request.POST.get('email', None)
-    # telefone = request.POST.get('telefone', None)
+# # def exemplo(request):
+#     # if request.method == 'POST':
+#     # name = request.POST.get('nome', None)
+#     # email = request.POST.get('email', None)
+#     # telefone = request.POST.get('telefone', None)
 
-    # print(name, email, telefone)
-    # Aluno.objects.create(nome=name, email=email, telefone=telefone)
+#     # print(name, email, telefone)
+#     # Aluno.objects.create(nome=name, email=email, telefone=telefone)
 
-    return render(request, 'main/index.html')
+#     return render(request, 'main/index.html')
 
 @login_required
 def newAluno(request):

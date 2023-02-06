@@ -22,5 +22,7 @@ urlpatterns = [
     path('', include('main.urls')),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    
+    path('aluno/v1/', include('main.urls', namespace='main')),
+    path('aluno-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
 ]
