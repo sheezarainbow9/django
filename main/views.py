@@ -4,13 +4,12 @@ from .forms import AlunoForm
 from django.contrib.auth.decorators import login_required
 
 from .serializers import AlunoSerializer
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets
 
 
 class AlunoViewSet(viewsets.ModelViewSet):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
 # # define que o usuário esteja logado, para ter acesso às informações. Deve-se colocar em todas as funções privadas.
 
